@@ -1,0 +1,26 @@
+<%
+success = get_flash(@conn, :success)
+error = get_flash(@conn, :error)
+warning = get_flash(@conn, :warning)
+info = get_flash(@conn, :info)
+%>
+<%= if success do %>
+<div class="notification is-success mam">
+  <%= success %>
+</div>
+<% end %>
+<%= if error do %>
+<div class="notification is-danger mam">
+  <%= error %>
+</div>
+<% end %>
+<%= if warning do %>
+<div class="notification is-warning mam">
+  <%= warning %>
+</div>
+<% end %>
+<%= if info do %>
+<div class="notification is-info mam">
+  <%= info %>
+</div>
+<% end %>

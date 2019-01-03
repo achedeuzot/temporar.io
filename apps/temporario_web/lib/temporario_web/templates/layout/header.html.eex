@@ -1,0 +1,34 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="<%= Routes.page_path(@conn, :index) %>">
+      Temporar.io
+      <!--img src="<%#= Routes.static_path(@conn, "/images/kwelo_logo.png") %>" alt="Temporario: The secure client-side encrypted pastebin" width="112" height="26"-->
+    </a>
+    <a class="navbar-burger burger" role="button" data-target="mainNavMenu" aria-label="menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+
+  <div id="mainNavMenu" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="<%= Routes.paste_path(@conn, :new) %>">
+        New Paste
+      </a>
+      <a class="navbar-item" href="<%= Routes.page_path(@conn, :faq) %>">
+        FAQ
+      </a>
+      <a class="navbar-item" href="mailto:hello@temporar.io">
+        Contact
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item is-hidden-mobile">
+        A client-side AES256 encrypted pastebin
+      </div>
+    </div>
+
+  </div>
+</nav>

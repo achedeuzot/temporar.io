@@ -1,0 +1,57 @@
+<div class="content mam">
+
+    <h1><abbr title="Frequently Asked Questions">FAQ</abbr></h1>
+
+    <h2>How does temporar.io work ?</h2>
+    <p>
+      We generate a random encryption key in the browser and we use it to encrypt the paste using
+      AES-256 through the awesome <a href="http://bitwiseshiftleft.github.io/sjcl/" target="_blank">sjcl library</a>.
+    </p>
+    <p>
+      We then send the encrypted paste to the server through an AJAX request which gives us a random address
+      for the newly created paste (based on an <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID v4</a>).
+    </p>
+    <p>
+      We then redirect to the given address using client-side javascript and append the encryption key in the URL after the hash (#).
+      Thus, the address of a paste is of the pattern <code>https://temporar.io/paste/&lt;some random id&gt;#&lt;encryption key&gt;</code>
+    </p>
+    <p>
+      When you copy the URL and send it to someone, they click or paste the link into the browser.<br>
+      The browser retrieves the encrypted data from the server using the random id contained in the URL.<br>
+      Whatever is after the hash symbol (#) is not sent to the server and remains in the browser.<br>
+      Therefore, the server never receives the decryption key and everything is decrypted directly in the browser.
+    </p>
+
+    <h2>Is Javascript encryption secure ?</h2>
+    <p>
+      There are <a
+            href="https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2011/august/javascript-cryptography-considered-harmful/" target="_blank">many</a>
+      <a href="https://blog.bren2010.io/2014/06/17/javascript-crypto.html" target="_blank">many</a>
+      <a href="https://tonyarcieri.com/whats-wrong-with-webcrypto" target="_blank">websites</a> discussing the issues of cryptography in a browser
+      but <a href="https://security.stackexchange.com/a/133288/22480" target="_blank">it's getting better</a>.<br>
+      The main issue is that it's a bad idea because browsers and javascript can be tampered with too easily and don't provide a sound environment for cryptography.
+    </p>
+    <p>
+      Be aware that the goal of encrypting the data directly in the browser is to prevent the server hosting
+      the data from knowing what it's hosting. You can't require someone to moderate content they cannot read.<br>
+      In that way, the host is granted plausible deniabily. At least, we hope ;)
+    </p>
+    <p>
+      So our goal is <strong>not</strong> to protect the user, but the server which hosts the data.<br>
+      Remember that as a user, you should use our service the same way as an unencrypted and insecure pastebin, meaning, with caution.<br>
+      Even if we try our best to secure everything between our servers and your browser, stay cautious of what you paste.
+    </p>
+
+    <h2>Why did you build temporar.io ?</h2>
+    <p>
+      Temporar.io is nothing new. There are many other websites providing the same service such as:
+    </p>
+      <ul>
+        <li><a href="https://0bin.net/" target="_blank">0bin.net</a></li>
+        <li><a href="https://privatebin.info/" target="_blank">privatebin.info</a> (based on zerobin.net)</li>
+        <li><a href="https://ghostbin.com/" target="_blank">ghostbin.com</a></li>
+      </ul>
+    <p>
+      Temporar.io is just another approach to the same ideas using Phoenix/Elixir and a dead-simple interface.
+    </p>
+</div>

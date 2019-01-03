@@ -1,0 +1,10 @@
+<div class="content mhm mbm">
+  <div id="paste_load">
+    <div>
+      <h1 id="paste_load_status">Loading paste...</h1>
+    </div>
+  </div>
+  <div id="paste" class="is-hidden">
+    <textarea name="paste" id="paste_payload" rows="20"><%= @paste.payload %></textarea>
+  </div>
+</div>

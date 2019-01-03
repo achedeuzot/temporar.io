@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Built with ❤ by
+        <a href="https://achedeuzot.me/" target="_blank" rel="noreferrer">Klemen Sever</a>
+        (<a href="https://twitter.com/achedeuzot" target="_blank" rel="nofollow noreferrer">@achedeuzot</a>)
+        in Paris, France – <strong>Temporar.io</strong> – &copy; <%= DateTime.utc_now().year %>
+      </p>
+    </div>
+  </div>
+</footer>

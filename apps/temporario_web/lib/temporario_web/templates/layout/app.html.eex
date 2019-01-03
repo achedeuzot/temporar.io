@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#343A40">
+
+    <title><%= @view_module.title(action_name(@conn), assigns) %> Zero-knowledge client-side AES256 encrypted pastebin – Temporario</title>
+    <meta name="description" content="<%= @view_module.metadesc(action_name(@conn), assigns) %>" />
+    <meta name="description" content="Secure zero-knowledge client-side enrypted pastebin. Share passwords and other sensitive content easily !">
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>">
+  </head>
+  <body data-js-view-name="<%= js_view_name(@conn, @view_template) %>">
+
+    <%= render TemporarioWeb.LayoutView, "header.html", assigns %>
+    <%= render TemporarioWeb.LayoutView, "alerts.html", assigns %>
+
+    <%= render @view_module, @view_template, assigns %>
+
+    <%= render TemporarioWeb.LayoutView, "footer.html", assigns %>
+    <script src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

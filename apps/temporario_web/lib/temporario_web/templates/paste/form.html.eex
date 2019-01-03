@@ -1,0 +1,87 @@
+<%= form_for @changeset, @action, [id: "paste-form"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="notification is-danger">
+      Oops, something went wrong! Please check the errors below.
+    </div>
+  <% end %>
+
+
+<div class="content mam">
+
+  <div class="field">
+    <%= textarea f, :payload,
+      [class: "textarea",
+      rows: 8,
+      "data-autoresize": "",
+      placeholder: "Paste here..."] %>
+    <%= error_tag f, :payload %>
+  </div>
+
+  <h2>Options</h2>
+
+  <hr>
+
+  <div class="field">
+    <div class="control">
+      <%#= checkbox f, :destroy_on_reading, [class: "form-control form-check-inline " <> validation_class(f, :destroy_on_reading), value: true] %>
+      <%= checkbox f, :destroy_on_reading, [class: "checkbox", value: true] %>
+      <%= label f, :destroy_on_reading, [class: "checkbox"] %>
+      <%= error_tag f, :destroy_on_reading %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= label f, :expiration, [class: "label"]%>
+      <div class="select">
+        <%#= select f, :expiration, @expiration_choices, [class: validation_class(f, :expiration), value: @default_expiration_choice] %>
+        <%= select f, :expiration, @expiration_choices, [class: "", value: @default_expiration_choice] %>
+        <%= error_tag f, :expiration %>
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+
+  <div class="field">
+    <div class="control">
+      <button type="submit" class="button is-primary is-outlined is-medium" id="js-paste-submit" disabled>Paste something first...</button>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+<div class="modal" id="entroy-modal" tabindex="-1" role="dialog" aria-labelledby="entropy-modal" aria-hidden="true">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="content">
+        <h2>Encryption entropy level</h2>
+        <p>
+          We need entropy to generate a safe and truly random key for your data.<br>
+          You can move your mouse or type random stuff until the progress bar below reaches 100%.
+        </p>
+        <div class="progress" style="min-width: 12rem;">
+          <progress id="js-entropy-progressbar" class="progress is-primary" value="0" max="100">0%</progress>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal" aria-hidden="true">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="content">
+        <h2>Paste error</h2>
+        <p>Sorry ! There was an error while we processed your paste.<br>
+           You can retry right away and if you still see this message, retry again in a few minutes.
+        </p>
+        <p>If the problem persists, you can contact us !</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+@import "~bulmaswatch/flatly/_variables.scss";
+
+$linkedin: #0077B5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #1DA1F2;
+$twitter-invert: findColorInvert($twitter);
+$github: #222222;
+$github-invert: findColorInvert($github);
+
+$custom-colors: (
+        "twitter":($twitter, $twitter-invert),
+        "linkedin": ($linkedin, $linkedin-invert),
+        "github": ($github, $github-invert),
+
+);
+
+@import "~bulma/bulma.sass";
+@import "~bulmaswatch/flatly/_overrides.scss";
+//@import "~bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass";
+@import "spacing_helpers";
+@import "~highlight.js/styles/solarized-light.css";
+
+.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+
+
+  //.navbar-brand {
+  //  a.navbar-item {
+  //    color: #ecf0f1;
+  //  }
+  //}
+}
+
+@media screen and (max-width: 1087px) {
+  .navbar .navbar-brand .navbar-item:not(.is-active):not(:hover) {
+    color: $light;
+  }
+}
+
+/* For higlight.js line numbers */
+.hljs-ln td.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 5px;
+}
+
+/* for block of code */
+.hljs-ln td.hljs-ln-code {
+  padding-left: 10px;
+  width: 100%;
+}
+
