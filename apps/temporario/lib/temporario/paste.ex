@@ -135,6 +135,6 @@ defimpl Plug.Exception, for: File.Error do
   def status(_exception), do: 404
 end
 
-defimpl Plug.Exception, for: Temporario.Pastes.Paste.InvalidGUID do
+defimpl Plug.Exception, for: Temporario.Paste.InvalidGUID do
   def status(_exception), do: 404
 end
