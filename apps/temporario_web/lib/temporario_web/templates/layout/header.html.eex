@@ -2,7 +2,6 @@
   <div class="navbar-brand">
     <a class="navbar-item" href="<%= Routes.page_path(@conn, :index) %>">
       Temporar.io
-      <!--img src="<%#= Routes.static_path(@conn, "/images/kwelo_logo.png") %>" alt="Temporario: The secure client-side encrypted pastebin" width="112" height="26"-->
     </a>
     <a class="navbar-burger burger" role="button" data-target="mainNavMenu" aria-label="menu" aria-expanded="false">
       <span></span>

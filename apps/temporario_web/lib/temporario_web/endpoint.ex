@@ -40,8 +40,8 @@ defmodule TemporarioWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_temporario_session",
-    signing_salt: System.get_env("TEMPORARIO_SIGNING_SALT"),
-    encryption_salt: System.get_env("TEMPORARIO_ENCRYPTION_SALT")
+    signing_salt: "TcAN2yQrEMpqoJOMSUeNGc0ZF",
+    encryption_salt: "XboRvfbpoWSFe+X5qCPqzmmMhEf"
 
   plug TemporarioWeb.Router
 end
