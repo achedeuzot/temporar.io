@@ -19,6 +19,9 @@
       <a class="navbar-item" href="<%= Routes.page_path(@conn, :faq) %>">
         FAQ
       </a>
+      <a class="navbar-item" href="https://github.com/achedeuzot/temporar.io" target="_blank">
+        Download Temporar.io
+      </a>
       <a class="navbar-item" href="mailto:hello@temporar.io">
         Contact
       </a>

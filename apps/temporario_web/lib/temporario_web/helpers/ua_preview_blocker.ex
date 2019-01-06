@@ -14,7 +14,6 @@ defmodule UAPreviewBlocker do
     headers = Enum.into conn.req_headers, %{}
     ua = headers["user-agent"]
 
-    IO.inspect(UAInspector.parse(ua))
     case UAInspector.bot?(ua) do
       true -> raise UAPreviewBlocker.UABlocked
       _ -> conn
