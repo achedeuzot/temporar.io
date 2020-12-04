@@ -6,7 +6,7 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "highlight.js": "9.13.1",
+    "highlight.js": "10.4.1",
     "highlightjs-line-numbers.js": "2.6.0",
     "jquery": "3.3.1",
     "npm": "^6.5.0",
